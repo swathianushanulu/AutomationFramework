@@ -12,15 +12,17 @@ import io.cucumber.java.Scenario;
 //	@RunWith(Cucumber.class)
 	@CucumberOptions(
 			features={"src/test/resources/Features"},
-			glue={"stepDefinitions"},
+			glue={"StepDefinitions","AppHooks"},
 			monochrome=true,
 			strict = true,
 			plugin={"pretty","json:target/cucumber.json","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:","html:target/cucumber-reports/report.html"},
 			tags="@login")
 	
 	public class TestRunner extends AbstractTestNGCucumberTests{
+	
+	}
 		
-		@BeforeStep
+		/*@BeforeStep
 		public void beforeStep() {
 		}
 
@@ -35,8 +37,8 @@ import io.cucumber.java.Scenario;
 		@After
 		public void afterScenario(Scenario scenario) {
 //			scenario.attach(Util.takeScreenShot(), "image/png", scenario.getName());
-		}
-	}
+		}*/
+	
 	
 	//"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
 //	import cucumber.api.CucumberOptions;
